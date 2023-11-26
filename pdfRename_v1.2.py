@@ -1,7 +1,6 @@
-# Renewed approach using pdfminer (pattern matching instead of xml name matching)
-# R&D: https://www.perplexity.ai/search/6ff640de-385a-47e2-8f85-68b0412b9868 (original thread) and https://www.perplexity.ai/search/1c227236-2441-419e-8ddb-0ced28299f96?s=u
-# It worked!!! :) (let's try it now on bigger samples to find potencial new problems)
-# v1.2 - Works well with minor issue (cannot convert lowecase to upper due to Windows restrictions)
+# Copyright 2023 Luis Emilio Sánchez Ramos
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at: http://www.apache.org/licenses/LICENSE-2.0
+# v1.2 - Renewed approach using pdfminer (pattern matching instead of xml name matching). Works well with minor issue (cannot convert lowecase to upper due to Windows restrictions) 
 import os, re, time, datetime
 import pandas as pd
 from io import StringIO
@@ -14,8 +13,8 @@ from pdfminer.pdfparser import PDFParser
 
 
 # Define the folder path (input) and *report* output path (ouput)
-folder_path = r'C:\Users\Sanchezrl\Downloads\WORK DOWNLOADS\1. Facturas\autoRenameAux'
-output_path = r'C:\BECARI@\PENDIENTES 2023\1.2 FACTURAS\pwrQry_facturas\xProcesar'
+folder_path = r'C:\User\path'
+output_path = r'C:\User\path'
 
 # Get the list of files in the folder and sort them by creation time (oldest to latest)
 files = sorted(
